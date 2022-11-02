@@ -27,6 +27,7 @@ class MainActivity : AppCompatActivity(), CounterView {
     private fun onClick(){
         binding.btnIncrement.setOnClickListener {
             presenter.increment()
+            presenter.changeCounterColor()
         }
         binding.btnDecrement.setOnClickListener {
             presenter.decrement()
@@ -39,7 +40,11 @@ class MainActivity : AppCompatActivity(), CounterView {
     }
 
     override fun changeColor(color: Int) {
-            binding.tvHello.setTextColor(color)
+        binding.tvHello.setTextColor(color)
+    }
+
+    override fun changeCounterColor(color: Int) {
+        binding.tvCounter.setTextColor(color)
     }
 
     private fun textColor(){

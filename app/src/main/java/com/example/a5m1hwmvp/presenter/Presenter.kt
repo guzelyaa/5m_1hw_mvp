@@ -21,9 +21,6 @@ class Presenter {
     fun increment(){
         model.increment()
         view.updateCounter(model.getCounter())
-        if (model.getCounter() == 15){
-            view.changeColor(colorModel.getGreenColor())
-        }
         if (model.getCounter() == 10){
             Toast.makeText(context, "Поздравляем!", Toast.LENGTH_LONG).show()
         }
@@ -38,5 +35,11 @@ class Presenter {
 
     fun changeColor(){
         view.changeColor(colorModel.getColor())
+    }
+
+    fun changeCounterColor(){
+        if (model.getCounter() == 15) {
+            view.changeCounterColor(colorModel.getGreenColor())
+        }
     }
 }
